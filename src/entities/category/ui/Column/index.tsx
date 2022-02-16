@@ -3,6 +3,8 @@ import styles from './styles.module.scss';
 
 export const Column: React.FC = ({ children }) => (
   <li className={styles.root}>
-    {children}
+    <div className={styles.inner}>
+      {children}
+    </div>
   </li>
 );

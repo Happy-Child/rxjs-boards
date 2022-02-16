@@ -2,6 +2,24 @@
   min-width: 300px;
   max-width: 300px;
   max-height: 100%;
+  display: inline-block;
+  margin-right: 10px;
+  height: 100%;
+
+  &:first-child {
+    margin-left: 20px;
+  }
+
+  &:last-child {
+    margin-right: 20px;
+  }
+}
+
+.inner {
   display: flex;
   flex-direction: column;
+  background-color: #F5F5F5;
+  border-radius: 4px;
+  max-height: 100%;
+  border: 2px solid #eaeaea;
 }

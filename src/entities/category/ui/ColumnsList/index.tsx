@@ -6,9 +6,7 @@ interface Props {
   className?: string;
 }
 export const ColumnsList: React.FC<Props> = ({ className = '', children }) => (
-  <div className={cn(styles.root, className)}>
-    <ul className={styles.inner}>
-      {children}
-    </ul>
-  </div>
+  <ul className={cn(styles.root, className)}>
+    {children}
+  </ul>
 );

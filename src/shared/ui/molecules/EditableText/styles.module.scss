@@ -1,0 +1,25 @@
+.root {
+  display: block;
+  width: 100%;
+
+  &.editMode {
+    .input {
+      border-color: #FF5722;
+      cursor: initial;
+    }
+  }
+}
+
+.input {
+  cursor: pointer;
+  border: 2px solid transparent;
+  width: 100%;
+  padding: 3px;
+  background: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #000;
+  border-radius: 4px;
+  outline: none;
+}

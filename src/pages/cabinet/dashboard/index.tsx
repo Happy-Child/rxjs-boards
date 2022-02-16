@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form } from '@/features/create-board';
+import { Form as CreateBoardForm } from '@/features/create-board';
+import { Form as CreateTaskForm } from '@/features/create-task';
 import { useTasks, TotalTaskCount, Task } from '@/entities/task';
 import {
   useCategories, ColumnsList, ColumnBody, ColumnHead, Column,
@@ -10,24 +11,24 @@ const getTasksByCategory = <T extends Pick<Task, 'categoryId'>>(catId: number, t
   tasks.filter(({ categoryId }) => categoryId === catId)
 );
 
-// Разделить на фитчи?
-
 export const DashboardPage: React.FC = () => {
   const tasks = useTasks();
   const categories = useCategories();
 
   return (
     <div className={styles.root}>
-      <div className={styles.topPanel}>
-        <Form />
-        <TotalTaskCount />
+      <div className={styles.wrapBox}>
+        <div className={styles.topPanel}>
+          <CreateBoardForm />
+          <TotalTaskCount />
+        </div>
       </div>
 
       <ColumnsList className={styles.main}>
         {
           categories.map((cat) => (
             <Column key={cat.id}>
-              <ColumnHead />
+              <ColumnHead inputName={`category-${cat.id}-name`} />
               <ColumnBody>
                 {
                   getTasksByCategory(cat.id, tasks).map((task) => (
@@ -35,6 +36,7 @@ export const DashboardPage: React.FC = () => {
                   ))
                 }
               </ColumnBody>
+              <CreateTaskForm />
             </Column>
           ))
         }
