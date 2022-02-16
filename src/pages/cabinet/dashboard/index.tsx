@@ -1,7 +1,9 @@
 import React from 'react';
 import { Form as CreateBoardForm } from '@/features/create-board';
 import { Form as CreateTaskForm } from '@/features/create-task';
-import { useTasks, TotalTaskCount, Task } from '@/entities/task';
+import {
+  useTasks, TotalTaskCount, Task, TaskListItem,
+} from '@/entities/task';
 import {
   useCategories, ColumnsList, ColumnBody, ColumnHead, Column,
 } from '@/entities/category';
@@ -32,7 +34,7 @@ export const DashboardPage: React.FC = () => {
               <ColumnBody>
                 {
                   getTasksByCategory(cat.id, tasks).map((task) => (
-                    <h4 key={task.id}>{task.title}</h4>
+                    <TaskListItem item={task} onClick={() => console.log('wASD')} />
                   ))
                 }
               </ColumnBody>
