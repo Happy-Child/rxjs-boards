@@ -6,6 +6,11 @@
   margin-right: 10px;
   height: 100%;
 
+  @media (max-width: 768px) {
+    min-width: 260px;
+    max-width: 260px;
+  }
+
   &:first-child {
     margin-left: 20px;
   }

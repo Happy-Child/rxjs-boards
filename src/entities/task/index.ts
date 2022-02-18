@@ -1,4 +1,3 @@
-export { TotalTaskCount } from './ui/TotalTaskCount';
-export { TaskListItem } from './ui/TaskListItem';
+export { TaskCardSmall } from './ui/task-card-small';
 export { useTasks } from './model';
 export type { Task } from './model';

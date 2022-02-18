@@ -7,7 +7,7 @@ interface Props {
 }
 export const EditableText: React.FC<Props> = ({ name }) => {
   const [isEdit] = React.useState(false);
-  const [val] = React.useState('test val test va test va test va v v test va');
+  const [val] = React.useState('test val test va testtest va test va v v test va');
 
   return (
     <label
@@ -22,6 +22,5 @@ export const EditableText: React.FC<Props> = ({ name }) => {
         type="text"
       />
     </label>
-
   );
 };

@@ -1,4 +1,4 @@
-export { ColumnBody } from './ColumnBody';
-export { ColumnHead } from './ColumnHead';
-export { ColumnsList } from './ColumnsList';
-export { Column } from './Column';
+export { ColumnBody } from './column-body';
+export { ColumnHead } from './column-head';
+export { ColumnsList } from './columns-list';
+export { Column } from './column';

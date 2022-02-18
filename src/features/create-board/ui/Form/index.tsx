@@ -10,8 +10,8 @@ export const Form: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <TextField className={styles.field} size="small" />
+    <form className={styles.root} onSubmit={handleSubmit}>
+      <TextField label="Create board" className={styles.field} size="small" />
       <Button variant="contained" type="submit"><Check /></Button>
     </form>
   );

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Form as CreateBoardForm } from '@/features/create-board';
 import { Form as CreateTaskForm } from '@/features/create-task';
 import {
-  useTasks, TotalTaskCount, Task, TaskListItem,
+  useTasks, Task, TaskCardSmall,
 } from '@/entities/task';
 import {
   useCategories, ColumnsList, ColumnBody, ColumnHead, Column,
 } from '@/entities/category';
+import { TopPanel } from './top-panel';
 import styles from './styles.module.scss';
 
 const getTasksByCategory = <T extends Pick<Task, 'categoryId'>>(catId: number, tasks: T[]): T[] => (
@@ -19,12 +19,7 @@ export const DashboardPage: React.FC = () => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.wrapBox}>
-        <div className={styles.topPanel}>
-          <CreateBoardForm />
-          <TotalTaskCount />
-        </div>
-      </div>
+      <TopPanel />
 
       <ColumnsList className={styles.main}>
         {
@@ -34,7 +29,7 @@ export const DashboardPage: React.FC = () => {
               <ColumnBody>
                 {
                   getTasksByCategory(cat.id, tasks).map((task) => (
-                    <TaskListItem item={task} onClick={() => console.log('wASD')} />
+                    <TaskCardSmall key={task.id} item={task} />
                   ))
                 }
               </ColumnBody>

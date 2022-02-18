@@ -1,3 +1,13 @@
+.root {
+  display: flex;
+  align-items: stretch;
+  flex-grow: 1;
+  max-width: 350px;
+}
+
 .field {
   margin-right: 10px !important;
+  flex-grow: 1;
 }
+
+

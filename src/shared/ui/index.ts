@@ -1,1 +1,1 @@
-export { EditableText } from './molecules/EditableText';
+export { EditableText } from './molecules/editable-text';

@@ -1,0 +1,35 @@
+.root {
+  padding: 20px;
+}
+
+.inner {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.wrapTexts {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    margin-top: 16px;
+  }
+
+  > * {
+    margin-right: 12px !important;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

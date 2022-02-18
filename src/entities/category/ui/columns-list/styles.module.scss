@@ -3,8 +3,12 @@
   width: 100%;
   max-width: 100%;
   min-width: 300px;
-  height: calc(100vh - 64px - 20px - 24px); // 100vh - top panel height - page padding top - top panel margin bottom
+  height: calc(100vh - 112px);
   user-select: none;
   white-space: nowrap;
   padding-bottom: 20px;
+
+  @media (max-width: 768px) {
+    height: calc(100vh - 138px);
+  }
 }

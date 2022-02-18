@@ -1,24 +1,9 @@
 .root {
   min-height: 100vh;
   background-color: #eee;
-  padding: 20px 0 0;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-}
-
-.wrapBox {
-  padding: 0 20px;
-}
-
-.topPanel {
-  padding: 12px;
-  background-color: #fff;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
 }
 
 .main {

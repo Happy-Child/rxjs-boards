@@ -1,0 +1,50 @@
+.root {
+  margin-bottom: 8px;
+  padding: 6px 27px 6px 8px;
+  border-radius: 6px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: initial;
+  position: relative;
+  min-height: 60px;
+
+  &:hover, &.activeActions {
+    .actionsBtns {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.actionsBtns {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+
+  > * {
+    display: block !important;
+    padding: 6px !important;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 2px !important;
+
+    svg {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+}
