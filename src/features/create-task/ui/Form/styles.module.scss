@@ -1,12 +1,27 @@
 .root {
   padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .form {
-  display: flex;
-  align-items: center;
+  > * {
+    display: block;
+  }
 }
 
 .field {
-  margin-right: 10px !important;
+  margin-bottom: 6px;
+}
+
+.wrapBtns {
+  display: flex;
+  width: 100%;
+
+  > * {
+    flex-grow: 1;
+  }
+}
+
+.field {
+  width: 100%;
 }

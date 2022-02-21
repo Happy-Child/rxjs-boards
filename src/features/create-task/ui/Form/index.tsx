@@ -1,14 +1,15 @@
 import React from 'react';
-import { Button, IconButton, TextField } from '@mui/material';
-import { Check, Clear } from '@mui/icons-material';
+import { Button, ButtonGroup } from '@mui/material';
+import { Check, Clear, Add } from '@mui/icons-material';
+import { EditableText } from '@/shared/ui';
 import styles from './styles.module.scss';
 
 export const Form: React.FC = () => {
   const [isActive, setIsActive] = React.useState(false);
 
-  const handleCreateTask = () => { setIsActive(true); };
+  const handleApply = () => { setIsActive(true); };
 
-  const handleClear = () => { setIsActive(false); };
+  const handleCancel = () => { setIsActive(false); };
 
   const handleSubmit = (e: React.FormEvent<unknown>): void => {
     e.preventDefault();
@@ -21,16 +22,20 @@ export const Form: React.FC = () => {
         isActive
           ? (
             <form className={styles.form} onSubmit={handleSubmit}>
-              <TextField className={styles.field} size="small" />
-              <IconButton color="success" type="submit"><Check /></IconButton>
-              <IconButton color="error" type="button" onClick={handleClear}>
-                <Clear />
-              </IconButton>
+              <EditableText className={styles.field} name="created-task" />
+              <ButtonGroup className={styles.wrapBtns}>
+                <Button color="success" type="submit" onClick={handleApply}>
+                  <Check />
+                </Button>
+                <Button color="error" type="button" onClick={handleCancel}>
+                  <Clear />
+                </Button>
+              </ButtonGroup>
             </form>
           )
           : (
-            <Button variant="contained" type="button" onClick={handleCreateTask}>
-              Create task
+            <Button fullWidth variant="outlined" type="button" onClick={handleApply}>
+              <Add />
             </Button>
           )
       }
